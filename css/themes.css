@@ -1,0 +1,345 @@
+/* ===================================
+   THEME TRANSITIONS
+=================================== */
+
+body{
+
+    transition:
+    background .5s ease,
+    color .5s ease;
+
+}
+
+.terminal{
+
+    transition:
+    background .5s ease,
+    border-color .5s ease,
+    box-shadow .5s ease;
+
+}
+
+.block-btn,
+.module-btn,
+.footer-btn,
+.panel{
+
+    transition:
+    background .3s ease,
+    border-color .3s ease,
+    color .3s ease,
+    box-shadow .3s ease;
+
+}
+
+/* ===================================
+   OVERWORLD THEME
+=================================== */
+
+body.overworld{
+
+    background:
+    radial-gradient(
+        circle at top,
+        #1c2330,
+        #0d1117
+    );
+
+}
+
+body.overworld .terminal{
+
+    background:
+    rgba(22,27,34,.96);
+
+    border-color:#30363d;
+
+    box-shadow:
+    0 0 20px rgba(94,231,255,.12),
+    0 0 60px rgba(94,231,255,.06);
+
+}
+
+body.overworld .panel{
+
+    background:#21262d;
+
+}
+
+body.overworld .panel-header{
+
+    color:#5ee7ff;
+
+}
+
+body.overworld .xp-bar{
+
+    background:
+    linear-gradient(
+        90deg,
+        #27ae60,
+        #2ecc71
+    );
+
+}
+
+/* ===================================
+   NETHER THEME
+=================================== */
+
+body.nether{
+
+    background:
+    radial-gradient(
+        circle at top,
+        #4a0000,
+        #140000
+    );
+
+}
+
+body.nether .terminal{
+
+    background:
+    rgba(35,10,10,.95);
+
+    border-color:#8b0000;
+
+    box-shadow:
+    0 0 25px rgba(255,50,50,.30),
+    0 0 80px rgba(255,50,50,.12);
+
+}
+
+body.nether .panel{
+
+    background:#250f0f;
+
+    border-color:#8b0000;
+
+}
+
+body.nether .panel-header{
+
+    color:#ff6b6b;
+
+}
+
+body.nether .module-btn,
+body.nether .footer-btn{
+
+    background:#3a1616;
+
+}
+
+body.nether .module-btn:hover,
+body.nether .footer-btn:hover{
+
+    background:#5a2020;
+
+}
+
+body.nether .xp-bar{
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff512f,
+        #dd2476
+    );
+
+    box-shadow:
+    0 0 15px #ff512f;
+
+}
+
+body.nether .result-text{
+
+    color:#ff8a8a;
+
+}
+
+body.nether .history-result,
+body.nether .stat-card strong{
+
+    color:#ff6b6b;
+
+}
+
+/* ===================================
+   END THEME
+=================================== */
+
+body.end{
+
+    background:
+    radial-gradient(
+        circle at top,
+        #170024,
+        #050008
+    );
+
+}
+
+body.end .terminal{
+
+    background:
+    rgba(20,10,35,.95);
+
+    border-color:#6a0dad;
+
+    box-shadow:
+    0 0 25px rgba(180,100,255,.25),
+    0 0 80px rgba(180,100,255,.10);
+
+}
+
+body.end .panel{
+
+    background:#1b102b;
+
+    border-color:#6a0dad;
+
+}
+
+body.end .panel-header{
+
+    color:#c084fc;
+
+}
+
+body.end .module-btn,
+body.end .footer-btn{
+
+    background:#28163f;
+
+}
+
+body.end .module-btn:hover,
+body.end .footer-btn:hover{
+
+    background:#3a205c;
+
+}
+
+body.end .xp-bar{
+
+    background:
+    linear-gradient(
+        90deg,
+        #8e44ad,
+        #c084fc
+    );
+
+    box-shadow:
+    0 0 15px #c084fc;
+
+}
+
+body.end .result-text{
+
+    color:#d8b4fe;
+
+}
+
+body.end .history-result,
+body.end .stat-card strong{
+
+    color:#c084fc;
+
+}
+
+/* ===================================
+   ACTIVE THEME CARD
+=================================== */
+
+.theme-card{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:.55rem;
+
+    color:white;
+
+    transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+
+}
+
+.theme-card:hover{
+
+    transform:
+    translateY(-3px);
+
+}
+
+.theme-card.active{
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.25);
+
+    transform:
+    scale(1.03);
+
+}
+
+/* ===================================
+   THEME CARD COLORS
+=================================== */
+
+.theme-card.overworld{
+
+    background:
+    linear-gradient(
+        145deg,
+        #2ecc71,
+        #27ae60
+    );
+
+}
+
+.theme-card.nether{
+
+    background:
+    linear-gradient(
+        145deg,
+        #ff512f,
+        #b31217
+    );
+
+}
+
+.theme-card.end{
+
+    background:
+    linear-gradient(
+        145deg,
+        #8e44ad,
+        #5b2c6f
+    );
+
+}
+
+/* ===================================
+   THEME GRID
+=================================== */
+
+.theme-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+}

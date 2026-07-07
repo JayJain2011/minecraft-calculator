@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CraftCalc v2.0 - Redstone Terminal</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
+</head>
+
+<body class="overworld">
+
+    <!-- PARTICLE BACKGROUND -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- MAIN TERMINAL -->
+    <main class="terminal">
+
+        <!-- HEADER -->
+        <header class="terminal-header">
+
+            <div class="logo-section">
+
+                <h1>⚡ REDSTONE TERMINAL</h1>
+
+                <div class="terminal-status">
+                    STATUS: ONLINE
+                </div>
+
+            </div>
+
+            <div class="player-panel">
+
+                <div class="level-text">
+                    Level 1 Engineer
+                </div>
+
+                <div class="xp-container">
+
+                    <div class="xp-bar"></div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- DISPLAY -->
+        <section class="display-section">
+
+            <div class="display-label">
+                TERMINAL INPUT
+            </div>
+
+            <input
+                id="display"
+                type="text"
+                readonly
+                placeholder="0">
+
+            <div class="result-text">
+                READY
+            </div>
+
+        </section>
+
+        <!-- CALCULATOR -->
+        <section class="calculator-grid">
+
+            <button class="block-btn tnt">C</button>
+            <button class="block-btn stone">⌫</button>
+            <button class="block-btn gold">%</button>
+            <button class="block-btn gold">÷</button>
+
+            <button class="block-btn stone">7</button>
+            <button class="block-btn stone">8</button>
+            <button class="block-btn stone">9</button>
+            <button class="block-btn gold">×</button>
+
+            <button class="block-btn stone">4</button>
+            <button class="block-btn stone">5</button>
+            <button class="block-btn stone">6</button>
+            <button class="block-btn gold">−</button>
+
+            <button class="block-btn stone">1</button>
+            <button class="block-btn stone">2</button>
+            <button class="block-btn stone">3</button>
+            <button class="block-btn gold">+</button>
+
+            <button class="block-btn stone">0</button>
+            <button class="block-btn stone">.</button>
+
+            <button
+                class="block-btn diamond craft-btn"
+                style="grid-column: span 2;">
+                CRAFT
+            </button>
+
+        </section>
+
+        <!-- MODULES -->
+        <section class="module-bar">
+
+            <button
+                id="history-btn"
+                class="module-btn">
+
+                📜 HISTORY
+
+            </button>
+
+            <button
+                id="achievements-btn"
+                class="module-btn">
+
+                🏆 ACHIEVEMENTS
+
+            </button>
+
+            <button
+                id="stats-btn"
+                class="module-btn">
+
+                📊 STATS
+
+            </button>
+
+            <button
+                id="themes-btn"
+                class="module-btn">
+
+                🎨 THEMES
+
+            </button>
+
+        </section>
+
+        <!-- HISTORY PANEL -->
+        <section
+            id="history-panel"
+            class="panel hidden">
+
+            <div class="panel-header">
+
+                Inventory History
+
+            </div>
+
+            <div
+                id="history-grid"
+                class="inventory-grid">
+
+            </div>
+
+        </section>
+
+        <!-- ACHIEVEMENTS PANEL -->
+        <section
+            id="achievements-panel"
+            class="panel hidden">
+
+            <div class="panel-header">
+
+                Achievements
+
+            </div>
+
+            <div
+                id="achievement-grid"
+                class="achievement-grid">
+
+            </div>
+
+        </section>
+
+        <!-- STATS PANEL -->
+        <section
+            id="stats-panel"
+            class="panel hidden">
+
+            <div class="panel-header">
+
+                Redstone Analytics
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span>
+                        Total Calculations
+                    </span>
+
+                    <strong
+                        id="stat-calculations">
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span>
+                        Highest Result
+                    </span>
+
+                    <strong
+                        id="stat-highest">
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span>
+                        Current Level
+                    </span>
+
+                    <strong
+                        id="stat-level">
+
+                        1
+
+                    </strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span>
+                        Total XP Earned
+                    </span>
+
+                    <strong
+                        id="stat-xp">
+
+                        0
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- THEMES PANEL -->
+        <section
+            id="themes-panel"
+            class="panel hidden">
+
+            <div class="panel-header">
+
+                Dimension Themes
+
+            </div>
+
+            <div class="theme-grid">
+
+                <button
+                    class="theme-card overworld">
+
+                    🌍 OVERWORLD
+
+                </button>
+
+                <button
+                    class="theme-card nether">
+
+                    🔥 NETHER
+
+                </button>
+
+                <button
+                    class="theme-card end">
+
+                    🌌 END
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="terminal-footer">
+
+            <button
+                id="sound-toggle"
+                class="footer-btn">
+
+                🔊 SOUND
+
+            </button>
+
+            <button
+                id="scientific-toggle"
+                class="footer-btn">
+
+                🧪 SCIENTIFIC
+
+            </button>
+
+            <button
+                id="reset-progress"
+                class="footer-btn">
+
+                🗑 RESET
+
+            </button>
+
+        </footer>
+
+    </main>
+
+    <!-- XP POPUP -->
+    <div id="xp-popup">
+
+        +10 XP
+
+    </div>
+
+    <!-- ACHIEVEMENT POPUP -->
+    <div id="achievement-popup">
+
+        <div class="achievement-title">
+
+            Achievement Unlocked
+
+        </div>
+
+        <div class="achievement-name">
+
+            Stone Age
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+<script defer src="../javascript/storage.js"></script>
+<script defer src="../javascript/calculator.js"></script>
+<script defer src="../javascript/xp.js"></script>
+<script defer src="../javascript/history.js"></script>
+<script defer src="../javascript/achievements.js"></script>
+<script defer src="../javascript/themes.js"></script>
+<script defer src="../javascript/stats.js"></script>
+<script defer src="../javascript/particles.js"></script>
+<script defer src="../javascript/audio.js"></script>
+<script defer src="../javascript/app.js"></script>
+
+</body>
+
+</html>
